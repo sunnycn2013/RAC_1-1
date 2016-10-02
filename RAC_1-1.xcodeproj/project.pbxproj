@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3771A6751D9FCA0200FFE6F3 /* RAC_1-1.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RAC_1-1.pch"; sourceTree = "<group>"; };
 		608318B50F0BA4512AB4C09E /* Pods_RAC_1_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RAC_1_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		725F2A610BE6A286B655D046 /* Pods-RAC_1-1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAC_1-1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RAC_1-1/Pods-RAC_1-1.debug.xcconfig"; sourceTree = "<group>"; };
 		89713EF69EAD378D7CD3696A /* Pods-RAC_1-1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAC_1-1.release.xcconfig"; path = "Pods/Target Support Files/Pods-RAC_1-1/Pods-RAC_1-1.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				B0E794AC1D9429140041B6BD /* main.m */,
+				3771A6751D9FCA0200FFE6F3 /* RAC_1-1.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -110,12 +112,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0E794BF1D9429140041B6BD /* Build configuration list for PBXNativeTarget "RAC_1-1" */;
 			buildPhases = (
+				670695AF3331CFB75D9AD88D /* 📦 Check Pods Manifest.lock */,
 				E7AA6006D18B7517388486D6 /* [CP] Check Pods Manifest.lock */,
 				B0E794A41D9429140041B6BD /* Sources */,
 				B0E794A51D9429140041B6BD /* Frameworks */,
 				B0E794A61D9429140041B6BD /* Resources */,
 				DE7270B37ABB64F11604900E /* [CP] Embed Pods Frameworks */,
 				883B0F08FFDD6D7027E13AFB /* [CP] Copy Pods Resources */,
+				C3A05511EA4358E48C6F7775 /* 📦 Embed Pods Frameworks */,
+				448F01D06FCB2826EA829223 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,6 +143,7 @@
 					B0E794A71D9429140041B6BD = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 5CW9655WUX;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -173,6 +179,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		448F01D06FCB2826EA829223 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RAC_1-1/Pods-RAC_1-1-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		670695AF3331CFB75D9AD88D /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		883B0F08FFDD6D7027E13AFB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -186,6 +222,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RAC_1-1/Pods-RAC_1-1-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3A05511EA4358E48C6F7775 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RAC_1-1/Pods-RAC_1-1-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE7270B37ABB64F11604900E /* [CP] Embed Pods Frameworks */ = {
@@ -340,10 +391,12 @@
 			baseConfigurationReference = 725F2A610BE6A286B655D046 /* Pods-RAC_1-1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RAC_1-1/RAC_1-1.pch";
 				INFOPLIST_FILE = "RAC_1-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.--.RAC-1-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -352,10 +405,12 @@
 			baseConfigurationReference = 89713EF69EAD378D7CD3696A /* Pods-RAC_1-1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RAC_1-1/RAC_1-1.pch";
 				INFOPLIST_FILE = "RAC_1-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.--.RAC-1-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
